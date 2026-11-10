@@ -23,7 +23,7 @@ def test_inicializacao_com_sucesso(conta_base):
 
 
 def test_inicializacao_saldo_negativo_lanca_excecao():
-    with pytest.raises(
+   with pytest.raises(
         ValueError, match="O saldo inicial não pode ser negativo."
     ):
         ContaBancaria(titular="Carlos", saldo_inicial=-50.0)
