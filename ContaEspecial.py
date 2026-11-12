@@ -11,4 +11,8 @@ class ContaEspecial(ContaBancaria):
 
     # Polimorfismo: sobrescreve o método sacar() da superclasse
     def sacar(self, valor: float) -> float:
-        return self._saldo
+        if valor > self.limite:
+            raise ValueError("Valor excede o limite disponível.")
+        else:
+            self._saldo -= valor
+            return self._saldo
